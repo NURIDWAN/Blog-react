@@ -1,0 +1,25 @@
+name: Deploy to FTP Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
+
+      - name: Upload files via FTP
+        run: |
+          lftp -f "
+          open -u ${{ secrets.akun@nuridwan.cloud }},${{ secrets.C+bgV(v5W]#C }} ftp://ftp.nuridwan.cloud
+          mirror -R ./home/nuridwan/public_html/nuridwan.cloud/akun
+          quit
+          "
