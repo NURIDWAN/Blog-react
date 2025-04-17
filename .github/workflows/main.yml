@@ -19,7 +19,7 @@ jobs:
       - name: Upload files via FTP
         run: |
           lftp -f "
-          open -u ${{ secrets.FTP_akun }},${{ secrets.FTP_C+bgV(v5W]#C }} ftp://ftp.nuridwan.cloud
+          open -u ${{ secrets.FTP_akun }},${{ secrets.FTP_fAWi4YgdB5hp }} ftp://ftp.nuridwan.cloud
           mirror -R ./home/nuridwan/public_html/nuridwan.cloud/akun
           quit
           "
